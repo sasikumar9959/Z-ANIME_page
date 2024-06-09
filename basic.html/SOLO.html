@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Left Image, Right Text</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("image3.webp");
+            transition: margin-left .5s;
+        }
+        p {
+            color: white;
+        }
+        h2{
+            color: white;
+            
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 50px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 8px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .sidebar .logout {
+            position: absolute;
+            bottom: 50px;
+            font-size: 25px;
+            color: #818181;
+        }
+
+        .sidebar .logout:hover {
+            color: #f1f1f1;
+        }
+
+        #main-content {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+   #AllBanners{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+}
+#primaryMainContainer{
+  /* width: 100%; */
+  display: grid;
+  grid-template-columns:auto auto;
+}
+#contentBanners{
+  width: 769px;
+}
+
+
+
+        #MainContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  flex-direction: column;
+
+}
+#Heading-box{
+  display: grid;
+  grid-template-columns: auto auto;
+  border-left: 5px solid red;
+  height: 12%;
+  padding: 0 12px;
+  align-items: center;
+}
+.heading{
+    color: white;
+  font-size: 1.6em;
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-weight: bold;
+  
+}
+.viewAll {
+  font-family: 'Mulish', sans-serif;
+  position: relative;
+  left: 35%;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  width: 82px;
+  
+}
+#Banners-container{
+  margin-top: 19px;
+  width: 770px;
+  flex-wrap: wrap;
+  display: flex;
+}
+#Banners-container img{
+  width: 217px;
+  border-radius: 5px;
+  margin-right:20px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.Image-Name{
+  position: relative;
+  color: white;
+  width: 217px;
+  padding-right: 30px;
+}
+.ep{
+  background: red;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 3px;
+  position: absolute;
+  display: inline-block;
+  top: 25px;
+  left: 10px;
+  font-size: 0.9em;
+  font-family: 'Ubuntu', sans-serif;
+}
+.comments{
+  background: rgb(46, 46, 46);
+  padding: 2px 8px;
+  border-radius: 3px;
+  position: absolute;
+  top: 300px;
+  left: 10px;
+  font-size: 0.9em;
+  font-family: 'Ubuntu', sans-serif;
+}
+.watch{
+  background: rgb(46, 46, 46);
+  padding: 2px 8px;
+  position: absolute;
+  top: 300px;
+  left: 135px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Ubuntu', sans-serif;
+}
+.content-type{
+  display: flex;
+  height: 13px;
+  margin: 20px 0 10px 0;
+}
+.action{
+  display: flex;
+  background: rgb(49, 49, 49);
+  border-radius: 17px;
+  padding: 6px 3px;
+  font-size: 1em;
+  font-family: 'Dongle', sans-serif;
+  align-items: center;
+}
+.adventure{
+  display: flex;
+  background: rgb(49, 49, 49);
+  border-radius: 17px;
+  padding: 6px 3px;
+  font-size: 1em;
+  margin-left: 12px;
+  font-family: 'Dongle', sans-serif;
+  align-items: center;
+}
+.show-name{
+  font-size: 1.4em;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+#LatestNews {
+  position: relative;
+  right: 0;
+  top: 0;
+  margin-top: 50px;
+}
+#LatestNewsSection{
+  width: 364px;
+  top: 0;
+  float: left;
+}
+.insideLatestNews{
+  width: 364px;
+}
+#Heading-box2{
+  display: grid;
+  grid-template-columns: auto auto;
+  border-left: 5px solid red;
+  padding: 0 12px;
+  align-items: center;
+
+}
+.headingInNews{
+  font-size: 1.6em;
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-weight: bold;
+}
+.viewAllInNews{
+  font-family: 'Mulish', sans-serif;
+  position: relative;
+  left: 35%;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+#LatestNewses{
+  margin-top: 30px;
+}
+#ImageOfNews{
+  margin-top: 16px;
+  width: 364px;
+  position: relative;
+}
+#ImageOfNews img{
+  width: 364px;
+  border-radius: 10px;
+}
+
+.name{
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  font-size: 1.4em;
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+}
+.epInNews{
+  background: red;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 3px;
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  left: 10px;
+  font-size: 0.9em;
+  font-family: 'Ubuntu', sans-serif;
+}
+.watchInNews{
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  background: rgb(46, 46, 46);
+  padding: 2px 8px;
+  position: absolute;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Ubuntu', sans-serif;
+}
+video{
+    box-shadow: 0 30px 50px blue;
+}
+
+
+    
+    footer{
+        background: #2a2c32;
+        padding-top: 50px;
+    }
+    .container1{
+        width: 1140px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .footer-content{
+        width: 33.3%;
+    }
+    h3{
+        font-size: 35px;
+        margin-bottom: 15px;
+        text-align: center;
+        color: white;
+        background-image: url("wp5073942.webp");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+    }
+    .footer-content p{
+        width:190px;
+        margin: auto;
+        padding: 7px;
+    }
+    .footer-content ul{
+        text-align: center;
+    }
+    .list{
+        padding: 0;
+    }
+    .list li{
+        width: auto;
+        text-align: center;
+        list-style-type:none;
+        padding: 7px;
+        position: relative;
+    }
+    .list li::before{
+        content: '';
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 100%;
+        width: 0;
+        height: 2px;
+        background: #c1612d;
+        transition-duration: .5s;
+    }
+    .list li:hover::before{
+        width: 70px;
+    }
+    .social-icons{
+        text-align: center;
+        padding: 0;
+    }
+    .social-icons li{
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+    }
+    .social-icons i{
+        color: white;
+        font-size: 25px;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color: #19a01b;
+    }
+    .social-icons i:hover{
+        color: #13b810;
+    }
+    .bottom-bar{
+        background: #11d221;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+    }
+    .bottom-bar p{
+        color: #343434;
+        margin: 0;
+        font-size: 16px;
+        padding: 7px;
+    }
+
+
+
+
+    * {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #0f0f0f;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: rgb(8, 8, 8);
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+s{
+    background-color: white;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  font-size: 300%;
+  
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="90" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+        <a>
+            <form class="example" action="ROMANTIC.html" style="margin:auto;max-width:250px">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+        </a>
+        <a href="HOMEPAGE.html">Home</a>
+        <a><font color="white">CATEGORIES:</font></a>
+        <a href="#">ACTION</a>
+        <a href="#">DRAMA</a>
+        <a href="#">ROMANTIC</a>
+        <a href="#">HORROR</a>
+        <a href="#">COMEDY</a>
+        <a href="#">ADVENTURES</a>
+        <a href="MANGA.html">SERVERS</a>
+        <a href="#" class="logout">Log Out</a>
+    </div>
+    <center><s>Z-ANIME & MANGAREADING</s></center>
+
+    <div id="main-content" class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <video class="img-fluid" controls autoplay id="video">
+                    <source src="SOLO.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">WATCH</button>
+                    <button type="button" class="btn btn-success">DOWNLOAD</button>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div>
+                    <h2>SOLO LEVELING</h2>
+                    <p>Humanity was caught at a precipice a decade ago when the first gates—portals linked with other dimensions that harbor monsters immune to conventional weaponry—emerged around the world. Alongside the appearance of the gates, various humans were transformed into hunters and bestowed superhuman abilities. Responsible for entering the gates and clearing the dungeons within, many hunters chose to form guilds to secure their livelihoods. Sung Jin-Woo is an E-rank hunter dubbed as the weakest hunter of all mankind. While exploring a supposedly safe dungeon, he and his party encounter an unusual tunnel leading to a deeper area. </p>
+                    <div class="btn btn-primary">WATCH HERE!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <h2>EPISODE 1:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video11.html'">WATCH</button>
+                    <!-- <button type="button" role="button"  class="btn btn-success" onclick="window.open('Demon_Slayer___Tanjiro_vs_Rui「4320p」8K(1080p).mp4')">Download</button> -->
+                    <a class="btn btn-success" role="button" title="Download" href="EP.1.v0.1705803305.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>EPISODE 2:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video2.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.2.v1.1706408705.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>EPISODE 3:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='vidoe3.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.3.v0.1707013505.720p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h2>EPISODE 4:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video4.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.4.v0.1707618909.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>EPISODE 5:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video5.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.5.v0.1708223407.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>EPISODE 6:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video11.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.6.v0.1708812954.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>EPISODE 7:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video11.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.7.v0.1709437206.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>EPISODE 8:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video11.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.8.v0.1710644704.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>EPISODE 9:</h2>
+                <div class="btn-group mt-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="location.href='video11.html'">WATCH</button>
+                    <a class="btn btn-success" role="button" title="Download" href="EP.9.v1.1711245904.1080p.mp4" download>DOWNLOAD</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="AllBanners">
+        <div id="primaryMainContainer">
+ 
+            <div id="contentBanners">
+                <!-- For Trending Now  -->
+                    <div id="MainContainer">
+                            <div id="Heading-box">
+                                <div class="heading">RELETED</div>
+                                <div class="viewAll">view all
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                           </div>
+ 
+                            <div id="Banners-container">
+                                <div class="Image-Name">
+                                    <a href="HOMEPAGE1.html"><img src="shogun.jpg"  alt="Fate stye night"></a>
+                                    <span class="ep">WATCH</span>
+                                    <div class="content-type">
+                                        <span class="action">Action</span>
+                                        <span class="adventure">Adventure</span>
+                                    </div>
+                                    <div class="show-name">
+                                        SOLO LEVELING
+                                    </div>
+                                </div>
+                                <div class="Image-Name">
+                                    <img src="s1.jpg" alt="">
+                                    <span class="ep">WATCH</span>
+                                    <div class="content-type">
+                                        <span class="action">Action</span>
+                                        <span class="adventure">Adventure</span>
+                                    </div>
+                                    <div class="show-name">
+                                        DEMON
+                                    </div>
+                                </div>
+                                <div class="Image-Name">
+                                    <img src="s2.jpg" alt="">
+                                    <span class="ep">WATCH</span>
+                                    
+                                    <div class="content-type">
+                                        <span class="action">Action</span>
+                                        <span class="adventure">Adventure</span>
+                                    </div>
+                                    <div class="show-name">
+                                        ONE PIECE
+                                    </div>
+                                </div>
+                                <div class="Image-Name">
+                                    <img src="s3.jpg" alt="">
+                                    <span class="ep">WATCH</span>
+                                    <div class="content-type">
+                                        <span class="action">Action</span>
+                                        <span class="adventure">Adventure</span>
+                                    </div>
+                                    <div class="show-name">
+                                        JUJUSTU KAISEN
+                                    </div>
+                                </div>
+                                <div class="Image-Name">
+                                    <img src="s4.jpg" alt="">
+                                    <span class="ep">WATCH</span>
+                                    <div class="content-type">
+                                        <span class="action">Action</span>
+                                        <span class="adventure">Adventure</span>
+                                    </div>
+                                    <div class="show-name">
+                                        YOUR NAME
+                                    </div>
+                                </div>
+                                <div class="Image-Name">
+                                    <img src="s5.webp" alt="">
+                                    <span class="ep">WATCH</span>
+                                    <div class="content-type">
+                                        <span class="action">Action</span>
+                                        <span class="adventure">Adventure</span>
+                                    </div>
+                                    <div class="show-name">
+                                        Death Note
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+    
+<!-- Recently added  -->
+<div id="MainContainer">
+    <!-- <div id="insideMainContainer"> -->
+        <div id="Heading-box">
+            <div class="heading">Recently added</div>
+            <div class="viewAll">view all
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <div id="Banners-container">
+            <div class="Image-Name">
+                <img src="dragon ball z.webp" alt="Fate stye night">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    DRAGON BALL Z
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="landscape.webp" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                LANDSCAPE
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="luffy vs kaido.webp" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    LUFFY VS KAIDO
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="maomao.webp" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    MAOMAO
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="my hero Academia.webp" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    MY HERO ACADEMIA
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="pokemon.webp" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    POKEMON
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="s7.jpg" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    BLEACH
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="s8.jpg" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    INITIAL D
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="s9.webp" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    HAIKYUU
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="s10.jpg" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    HUNTER X HUNTER
+                </div>
+            </div>
+            <div class="Image-Name">
+                <img src="pokemon.webp" alt="">
+                <span class="ep">WATCH</span>
+                <div class="content-type">
+                    <span class="action">Action</span>
+                    <span class="adventure">Adventure</span>
+                </div>
+                <div class="show-name">
+                    POKEMON
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>
+
+</div>
+<!-- Recently added -->
+
+
+<!-- Latest News -->
+<div id="LatestNews">
+<div id="LatestNewsSection">
+<div id="insideLatestNews">
+
+    <div id="Heading-box2">
+        <div class="headingInNews">Latest News</div>
+        <div class="viewAllInNews">view all
+            <i class="fas fa-arrow-right"></i>
+        </div>
+    </div>
+ 
+<div id="LatestNewses">
+    <div id="ImageOfNews" style="margin: 0;">
+        <span class="epInNews">WATCH</span>
+          
+        <img src="image2.png" alt="">
+        <span class="name">
+            Boruto : Next generation
+        </span>
+    </div>
+    <div id="ImageOfNews">
+        <span class="epInNews">WATCH</span>
+        <img src="image4.jpg" alt="">
+        <span class="name">
+            Erased
+        </span>
+    </div>
+    <div id="ImageOfNews">
+        <span class="epInNews">WATCH</span>
+        <img src="image5.jpg" alt="">
+        <span class="name">
+            KAIJU NO 8
+        </span>
+    </div>
+    <div id="ImageOfNews">
+        <span class="epInNews">WATCH</span>
+            <span class="watchInNews"><i class="far fa-eye"></i> 9987</span>
+        <img src="image7.jpg" alt="">
+        <span class="name">
+            demon slayer:Mugen train
+        </span>
+    </div>
+    <div id="ImageOfNews">
+        <span class="epInNews">WATCH</span>
+            <span class="watchInNews"><i class="far fa-eye"></i> 9987</span>
+        <img src="CLASS.webp" alt="">
+        <span class="name">
+            Classroom of the Elite
+        </span>
+    </div>
+    <div id="ImageOfNews">
+        <span class="epInNews">WATCH</span>
+            <span class="watchInNews"><i class="far fa-eye"></i> 9987</span>
+        <img src="image14.jpg" alt="">
+        <span class="name">
+            Death Note
+        </span>
+    </div>
+    <div id="ImageOfNews">
+        <span class="epInNews">WATCH</span>
+            <span class="watchInNews"><i class="far fa-eye"></i> 9987</span>
+        <img src="dragon ball z.webp" alt="">
+        <span class="name">
+            Death Note
+        </span>
+    </div>
+</div>
+</div>
+</div>
+<!-- Latest News -->
+
+</div>
+</div>
+
+</div>
+<!-- ALL SHOWS  -->
+
+
+</body>
+<script src="script.js"></script>
+
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.getElementById("menuIcon").onclick = function() {
+            openSidebar();
+        };
+
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "200px";
+            document.getElementById("main-content").style.marginLeft = "200px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+            document.getElementById("main-content").style.marginLeft = "0";
+        }
+    </script>
+     <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+
+
+     <footer>
+      <div class="container1">
+          <div class="footer-content">
+              <h3>Contact Us</h3>
+              <p>sasimani878@gmail.com</p>
+              <p>Phone:9959877084</p>
+              <p>Address:Telisina nuvvu ralevu ley</p>
+          </div>
+          <div class="footer-content">
+              <h3>Quick Links</h3>
+               <ul class="list">
+                  <li><a href="">Home</a></li>
+                  <li><a href="">About</a></li>
+                  <li><a href="">Services</a></li>
+                  <li><a href="">Products</a></li>
+                  <li><a href="">Contact</a></li>
+               </ul>
+          </div>
+          <div class="footer-content">
+              <h3>Follow Us</h3>
+              <ul class="social-icons">
+               <li><a href=""><i class="fab fa-facebook"></i></a></li>
+               <li><a href=""><i class="fab fa-twitter"></i></a></li>
+               <li><a href=""><i class="fab fa-instagram"></i></a></li>
+               <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+              </div>
+              <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+              <script src="script.js"></script>
+          
+            </footer>  
+
+            <style>
+                @media only screen and (max-width:1132px) {
+            
+            .slider{
+                width: 860px;
+            }
+            
+            
+            #contentBanners{
+                width: 537px;
+                flex-wrap: wrap;
+            }
+            .Image-Name{
+                padding-right: 12px;
+                width: 167px;
+            }
+            
+            #ImageOfNews{
+                width: 300px;
+            }
+            #ImageOfNews img{
+                width: 300px;
+            }
+            #Banners-container{
+                width: 537px;
+            }
+            #Banners-container img{
+                width: 167px;
+            }
+            
+            .comments{
+                top: 231px;
+            }
+            .watch{
+                width: 53px;
+                top: 231px;
+                left: 91px;
+            }
+            
+            
+            #LatestNews{
+                margin-left: 30px;
+            }
+            #LatestNewsSection{
+                width: 300px;
+            }
+            }
+            @media only screen and  (max-width:900px){
+            #Menu-Btn{
+                display: block;
+            }
+            #other-opt button{
+                margin-right: 70px;
+                
+            }
+            #Navbar ul li{
+                display: none;
+            }
+            #search{
+                display: none;
+            }
+            .search{
+                display: none;
+            }
+            
+            .slider{
+                width: 700px;
+            }
+            .slider img{
+                width: 621px;
+                height: 307px;
+            }
+            
+            #contentBanners{
+                width: 700px;
+                flex-wrap: wrap;
+            }
+            
+            
+            #primaryMainContainer{
+            
+                grid-template-columns:auto ;
+                grid-template-rows: auto auto;
+            }
+            #Banners-container{
+                width: 700px;
+            }
+            
+            
+            
+            
+            .Image-Name{
+                padding-right: 12px;
+                width: 163px;
+            }
+            }
+            
+            @media only screen and  (max-width:730px){
+            .slider{
+                width: 540px;
+            }
+            .search{
+                right: 49px;
+            }
+            #contentBanners{
+                width: 540px;
+                flex-wrap: wrap;
+            }
+            #Banners-container{
+                width: 540px;
+            }
+            }
+            @media only screen and  (max-width:550px){
+            .slider{
+                width: 380px;
+                height: 400px;
+            }
+            .search{
+                right: 16px;
+            }
+            #contentBanners{
+                width: 380px;
+                flex-wrap: wrap;
+            }
+            #Banners-container{
+                width: 380px;
+            }
+            
+            .Image-Name{
+                padding-right: 12px;
+                width: 178px;
+            }
+            #Banners-container img{
+                width: 182px;
+            }
+            }
+            @media only screen and  (max-width:400px){
+            .slider{
+                width: 290px;
+                height: 250px;
+            }
+            #other-opt{
+                display: none;
+            }
+            #Menu-Btn{
+                display: block;
+            
+            }
+            #contentBanners{
+                width: 300px;
+                flex-wrap: wrap;
+                margin: auto;
+            }
+            #Banners-container{
+                width: 300px;
+                margin: auto;
+            }
+            .Image-Name{
+                padding-right: 12px;
+                width: 138px;
+            }
+            #Banners-container img{
+                width: 140px;
+            }
+            #Heading-box{
+                font-size: 0.9em;
+            }
+            
+            .comments{
+                top: 195px;
+                font-size: 11px;
+            }
+            .watch{
+                width: 44px;
+                top: 195px;
+                left: 72px;
+                font-size: 11px;
+            }
+            #LatestNews{
+                margin-left: 0px;
+            }
+            #LatestNewsSection{
+                width: 270px;
+            }
+            }
+            
+            @media only screen and  (max-width:310px){
+            #contentBanners{
+                width: 290px;
+                flex-wrap: wrap;
+                margin: auto;
+            }
+            #Banners-container{
+                width: 290px;
+                margin: auto;
+            }
+            
+            .Image-Name{
+                padding-right: 12px;
+                width: 200px;
+                margin: 0 auto;
+            }
+            #Banners-container img{
+                width: 200px;
+            }
+            
+            .comments{
+                top: 283px;
+                font-size: 15px;
+            }
+            .watch{
+                width: 55px;
+                top: 283px;
+                left: 119px;
+                font-size: 15px;
+            }
+            .viewAllInNews{
+                max-width: 83px;
+            }
+            }
+            </style>
+        
+</body>
+</html>

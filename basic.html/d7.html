@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anime</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("image12.webp");
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            color: red;
+            text-align: center;
+        }
+        video {
+            width: 200%;
+            height: 100%;
+            max-width: 200vw;
+            max-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <h1>EPISODE 1:</h1>
+        <video class="img-fluid" controls autoplay id="video">
+            <source src="d7.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <a class="btn btn-success mt-3" role="button" title="Download" href="d1.mp4" download>DOWNLOAD</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('video').addEventListener('play', function() {
+            if (this.requestFullscreen) {
+                this.requestFullscreen();
+            } else if (this.mozRequestFullScreen) { // Firefox
+                this.mozRequestFullScreen();
+            } else if (this.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                this.webkitRequestFullscreen();
+            } else if (this.msRequestFullscreen) { // IE/Edge
+                this.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>

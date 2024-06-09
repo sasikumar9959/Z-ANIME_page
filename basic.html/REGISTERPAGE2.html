@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background-image: url("image3.webp");
+        }
+
+        .loginBox {
+            width: 300px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .loginBox .user {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .loginBox input[type="text"],
+        .loginBox input[type="password"],
+        .loginBox input[type="email"] {
+            border: none;
+            background: none;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+            border: 2px solid white;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+        }
+
+        .loginBox input[type="text"]:focus,
+        .loginBox input[type="password"]:focus,
+        .loginBox input[type="email"]:focus {
+            width: 280px;
+            border-color: #2ecc71;
+        }
+
+        .loginBox input[type="submit"] {
+            border: none;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .loginBox input[type="submit"]:hover {
+            background: #2ecc71;
+        }
+
+        .inputWithIcon input {
+            padding-left: 40px;
+        }
+
+        .inputWithIcon {
+            position: relative;
+        }
+
+        .inputWithIcon i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 320px) {
+            body {
+                background-color: aqua;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            body {
+                background-color: rgb(177, 48, 48);
+            }
+        }
+
+        @media screen and (min-width: 1224px) {
+            body {
+                background-color: rgb(48, 151, 8);
+            }
+        }
+
+        @media screen and (min-width: 1824px) {
+            body {
+                background-color: rgb(101, 51, 208);
+            }
+        }
+    </style>
+    <script>
+        function loginValidation() {
+            var uname = document.myform.name.value;
+            var email = document.myform.email.value;
+            var phno = document.myform.phno.value;
+            var username = document.myform.username.value;
+            var pass = document.myform.pass.value;
+            var confirmpass = document.myform.confirmpass.value;
+
+            var valid = true;
+
+            var unameError = document.getElementById('uname-error');
+            var phnoError = document.getElementById('phno-error');
+            var usernameError = document.getElementById('username-error');
+            var passError = document.getElementById('pass-error');
+            var confirmpassError = document.getElementById('confirmpass-error');
+
+            unameError.innerHTML = '';
+            phnoError.innerHTML = '';
+            usernameError.innerHTML = '';
+            passError.innerHTML = '';
+            confirmpassError.innerHTML = '';
+
+            if (uname == null || uname == "") {
+                unameError.innerHTML = "Name can't be blank";
+                valid = false;
+            }
+
+            if (phno.length < 10) {
+                phnoError.innerHTML = "Phone number must be at least 10 digits";
+                valid = false;
+            }
+
+            if (username == null || username == "") {
+                usernameError.innerHTML = "Please enter a valid username";
+                valid = false;
+            }
+
+            if (pass.length < 6) {
+                passError.innerHTML = "Password must be at least 6 characters";
+                valid = false;
+            }
+
+            if (confirmpass != pass) {
+                confirmpassError.innerHTML = "Passwords do not match";
+                valid = false;
+            }
+
+            return valid;
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <li><a id="Home" href="HOMEPAGE.html"><h1>Home</h1></a></li>
+    </nav>
+    <div class="loginBox">
+        <img class="user" src="image3.webp">
+        <center><FONT COLOR="white">REGISTER HERE!</FONT></center>
+        <form name="myform" action="HOMEPAGE.html" onsubmit="return loginValidation()">
+            <div class="inputWithIcon">
+                <input type="text" name="name" placeholder="Name" autofocus>
+                <i class="fa fa-user"></i>
+                <div id="uname-error" class="error-message"></div>
+            </div>
+            <div class="inputWithIcon">
+                <input type="email" name="email" placeholder="Email">
+                <i class="fa fa-envelope"></i>
+                <div id="email-error" class="error-message"></div>
+            </div>
+            <div class="inputWithIcon">
+                <input type="text" name="phno" placeholder="Phone Number" pattern="[0-9]{10}">
+                <i class="fa fa-phone"></i>
+                <div id="phno-error" class="error-message"></div>
+            </div>
+            <div class="inputWithIcon">
+                <input type="text" name="username" placeholder="Username">
+                <i class="fa fa-user"></i>
+                <div id="username-error" class="error-message"></div>
+            </div>
+            <div class="inputWithIcon">
+                <input type="password" name="pass" placeholder="Password">
+                <i class="fa fa-lock"></i>
+                <div id="pass-error" class="error-message"></div>
+            </div>
+            <div class="inputWithIcon">
+                <input type="password" name="confirmpass" placeholder="Confirm Password">
+                <i class="fa fa-lock"></i>
+                <div id="confirmpass-error" class="error-message"></div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

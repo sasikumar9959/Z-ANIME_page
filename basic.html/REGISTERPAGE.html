@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-ANIME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("image3.webp");
+        }
+        h1{
+            color: white;
+            size: 150%;
+        }
+
+        .loginBox {
+            width: 300px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .loginBox h1 {
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .loginBox .user {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .loginBox input[type="text"],
+        .loginBox input[type="password"] {
+            border: none;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid white;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+        }
+
+        .loginBox input[type="text"]:focus,
+        .loginBox input[type="password"]:focus {
+            width: 280px;
+            border-color: #2ecc71;
+        }
+
+        .loginBox input[type="submit"] {
+            border: none;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+        .loginBox input[type="submit"]:hover {
+            background: #2ecc71;
+        }
+
+        .loginBox a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .inputWithIcon input {
+            padding-left: 40px;
+        }
+
+        .inputWithIcon {
+            position: relative;
+        }
+
+        .inputWithIcon i {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            color: white;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: -15px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 320px) {
+            body {
+                background-color: aqua;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            body {
+                background-color: rgb(177, 48, 48);
+            }
+        }
+
+        @media screen and (min-width: 1224px) {
+            body {
+                background-color: rgb(48, 151, 8);
+            }
+        }
+
+        @media screen and (min-width: 1824px) {
+            body {
+                background-color: rgb(101, 51, 208);
+            }
+        }
+    </style>
+    <script>
+        function loginValidation() {
+            var uname = document.myform.username.value;
+            var password = document.myform.password.value;
+            var valid = true;
+
+            var unameError = document.getElementById('uname-error');
+            var passwordError = document.getElementById('password-error');
+
+            unameError.innerHTML = '';
+            passwordError.innerHTML = '';
+
+            if (uname == null || uname == "") {
+                unameError.innerHTML = "Name can't be blank";
+                valid = false;
+            } 
+
+            if (password.length < 6) {
+                passwordError.innerHTML = "Password must be at least 6 characters";
+                valid = false;
+            }
+
+            return valid;
+        }
+    </script>
+</head>
+<body>
+    <CENTER><h1>Z-ANIME</h1></CENTER>
+    <div class="loginBox">
+        <img class="user" src="image3.webp" alt="User Image">
+        <form name="myform" action="HOMEPAGE.html" onsubmit="return loginValidation()">
+            <div>
+                <center><h1>Login Page..</h1></center>
+                <div class="inputWithIcon">
+                    <input type="text" name="username" placeholder="User Name" autofocus>
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        
+                    </i>
+                    <div id="uname-error" class="error-message"></div>
+                </div>
+                <div class="inputWithIcon">
+                    <input type="password" name="password" placeholder="Password" autofocus>
+                    <i class="fa fa-lock"></i>
+                    <div id="password-error" class="error-message"></div>
+                </div>
+                <center><a href="forgot.html">FORGOT PASSWORD</a><br></center>
+                <input type="submit" value="Submit"><br><br>
+                <center><a href="REGISTERPAGE2.html">CREATE AN ACCOUNT</a></center>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
